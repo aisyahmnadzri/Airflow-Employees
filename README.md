@@ -62,16 +62,21 @@ The `define_dag` performs the following steps:
 
 Ensure the following are installed:
 
+```
 - Docker
 - Docker Compose
+```
 
 Verify installation:
 
+```
 docker --version
 docker compose version
+```
 
 ### 2️⃣ Set Up the Airflow Environment
 
+```
 # Create required folders
 mkdir -p dags logs plugins
 
@@ -80,10 +85,13 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 
 # Initialize Airflow
 docker compose up airflow-init
+```
 
 ### 3️⃣ Start Airflow
 
+```
 docker compose up
+```
 <img width="1600" height="848" alt="image" src="https://github.com/user-attachments/assets/610db8d0-451e-4286-a6ae-8cc381d20967" />
 
 
@@ -95,8 +103,10 @@ http://localhost:8080
 
 Login credentials:
 
+```
 * **Username:** airflow
 * **Password:** airflow
+```
 
 ---
 
