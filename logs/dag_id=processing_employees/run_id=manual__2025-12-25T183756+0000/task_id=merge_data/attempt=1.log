@@ -1,0 +1,11 @@
+{"timestamp":"2025-12-25T18:38:04.532089Z","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-12-25T18:38:04.534267Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/define_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-12-25T18:38:04.684232Z","level":"info","event":"Task instance is in running state","logger":"task.stdout"}
+{"timestamp":"2025-12-25T18:38:04.685927Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.QUEUED","logger":"task.stdout"}
+{"timestamp":"2025-12-25T18:38:04.686958Z","level":"info","event":"Current task name:merge_data","logger":"task.stdout"}
+{"timestamp":"2025-12-25T18:38:04.688200Z","level":"info","event":"Dag name:processing_employees","logger":"task.stdout"}
+{"timestamp":"2025-12-25T18:38:04.780200Z","level":"info","event":"Done. Returned value was: 0","logger":"airflow.task.operators.airflow.providers.standard.decorators.python._PythonDecoratedOperator","filename":"python.py","lineno":217}
+{"timestamp":"2025-12-25T18:38:04.781108Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019b56cd-af6e-76d6-9eaf-c7e6cb7576ac'), task_id='merge_data', dag_id='processing_employees', run_id='manual__2025-12-25T18:37:56+00:00', try_number=1, dag_version_id=UUID('019b56c3-0ccb-783c-b596-4ca56cbc0af4'), map_index=-1, hostname='51e6148e9cb0', context_carrier={}, task=<Task(_PythonDecoratedOperator): merge_data>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=0, start_date=datetime.datetime(2025, 12, 25, 18, 38, 3, 712572, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1370}
+{"timestamp":"2025-12-25T18:38:04.870561Z","level":"info","event":"Task instance in success state","logger":"task.stdout"}
+{"timestamp":"2025-12-25T18:38:04.872023Z","level":"info","event":" Previous state of the Task instance: TaskInstanceState.RUNNING","logger":"task.stdout"}
+{"timestamp":"2025-12-25T18:38:04.873156Z","level":"info","event":"Task operator:<Task(_PythonDecoratedOperator): merge_data>","logger":"task.stdout"}
