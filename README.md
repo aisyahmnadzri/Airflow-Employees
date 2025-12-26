@@ -19,6 +19,7 @@ This project demonstrates how to orchestrate a data pipeline that:
 
 ## 📂 Project Structure
 
+---
 Airflow-Employees/
 ├── dags/
 │   ├── files/
@@ -32,6 +33,7 @@ Airflow-Employees/
 ├── docker-compose.yaml
 ├── .env
 └── README.md
+---
 
 ## 🔄 Pipeline Overview
 
