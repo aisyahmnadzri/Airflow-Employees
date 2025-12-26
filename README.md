@@ -1,4 +1,3 @@
-```
 # Airflow ETL Pipeline – Employee Data Processing
 
 A small end-to-end **ETL pipeline built with Apache Airflow and PostgreSQL**, running locally using **Docker Compose**.
@@ -9,7 +8,6 @@ This project demonstrates how to orchestrate a data pipeline that:
 - Deduplicates and merges records into a final table
 - Runs reliably using Airflow DAGs
 
----
 
 ## 🧱 Tech Stack
 
@@ -19,30 +17,25 @@ This project demonstrates how to orchestrate a data pipeline that:
 - Python
 - SQL
 
----
-
 ## 📂 Project Structure
 
-```
-
-airflow-tutorial/
+Airflow-Employees/
 ├── dags/
-│   ├── process_employees.py      # Airflow DAG definition
 │   ├── files/
-│   │   └── employees.csv         # Downloaded CSV file
-├── logs/                          # Airflow logs
+│   │   └── employees.csv         
+│   ├── create_tables.py      
+│   ├── define_dag.py      
+│   ├── load_data.py      
+│   └── merge_data.py      
+├── logs/                          
 ├── plugins/
 ├── docker-compose.yaml
 ├── .env
 └── README.md
 
-````
-
----
-
 ## 🔄 Pipeline Overview
 
-The `process_employees` DAG performs the following steps:
+The `define_dag` performs the following steps:
 
 1. **Create final table (`employees`)**
    - Stores clean and deduplicated employee records
@@ -61,8 +54,6 @@ The `process_employees` DAG performs the following steps:
    - Inserts distinct records into the final table
    - Updates existing records using `ON CONFLICT`
 
----
-
 ## ▶️ How to Run the Project
 
 ### 1️⃣ Prerequisites
@@ -74,25 +65,11 @@ Ensure the following are installed:
 
 Verify installation:
 
-```bash
 docker --version
 docker compose version
-````
 
----
+### 2️⃣ Set Up the Airflow Environment
 
-### 2️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/<your-username>/airflow-etl-employees.git
-cd airflow-etl-employees
-```
-
----
-
-### 3️⃣ Set Up the Airflow Environment
-
-```bash
 # Create required folders
 mkdir -p dags logs plugins
 
@@ -101,15 +78,12 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 
 # Initialize Airflow
 docker compose up airflow-init
-```
 
----
+### 3️⃣ Start Airflow
 
-### 4️⃣ Start Airflow
-
-```bash
 docker compose up
-```
+<img width="1600" height="848" alt="image" src="https://github.com/user-attachments/assets/610db8d0-451e-4286-a6ae-8cc381d20967" />
+
 
 Open the Airflow UI:
 
@@ -132,6 +106,9 @@ Navigate to **Admin → Connections → Add**
 
 Fill in the following:
 
+<img width="1600" height="779" alt="image" src="https://github.com/user-attachments/assets/0101ea5c-35ed-40f8-b7e8-0590f12f589f" />
+
+
 | Field           | Value              |
 | --------------- | ------------------ |
 | Connection ID   | `tutorial_pg_conn` |
@@ -148,11 +125,14 @@ Save the connection.
 
 ## 🚀 Running the DAG
 
-1. Open the **process_employees** DAG in the Airflow UI
-2. Toggle the DAG **ON**
-3. Click **Trigger DAG**
+1. Open the **processing_employees** DAG in the Airflow UI
+   <img width="1600" height="753" alt="image" src="https://github.com/user-attachments/assets/55d3caee-67b1-4c13-a382-37e62a170330" />
 
-Monitor execution via the **Grid** and **Logs** views.
+2. Toggle the DAG **ON**
+   <img width="1600" height="848" alt="image" src="https://github.com/user-attachments/assets/4fa54252-eade-401d-b045-827abcdb1e62" />
+
+3. Monitor execution via the **Grid** and **Logs** views.
+   <img width="1600" height="754" alt="image" src="https://github.com/user-attachments/assets/8e0ff732-c33e-4510-a93d-9890eb9930e6" />
 
 ---
 
